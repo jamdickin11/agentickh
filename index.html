@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Jonathan Roche — Practical AI, Automation & Business Transformation · Cambodia</title>
+<title>Agentico — From Digital to Agentic Transformation · Cambodia</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -164,26 +164,31 @@ main,header,footer{position:relative;z-index:3}
   font-family:'Space Grotesk',sans-serif;font-weight:700;
   letter-spacing:.16em;font-size:.82rem;text-transform:uppercase;
   display:flex;align-items:center;gap:11px;
+  white-space:nowrap;
+  position:relative;
+  z-index:960;
 }
 .brand .mark{
   width:30px;height:30px;border-radius:9px;position:relative;
   background:conic-gradient(from 0deg,var(--cyan),var(--violet),var(--magenta),var(--cyan));
   animation:spin 6s linear infinite;
   box-shadow:0 0 22px rgba(34,225,255,.4);
+  flex:0 0 auto;
 }
 .brand .mark::after{
   content:'';position:absolute;inset:3px;border-radius:6px;background:#05060c;
 }
 .brand .mark::before{
-  content:'JR';position:absolute;inset:0;z-index:2;
+  content:'AG';position:absolute;inset:0;z-index:2;
   display:grid;place-items:center;
   font-size:.6rem;font-weight:700;letter-spacing:0;color:var(--cyan);
 }
-.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links{display:flex;gap:26px;align-items:center}
 .nav-links a{
-  font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;
   text-transform:uppercase;color:var(--muted);
   position:relative;padding:6px 0;transition:color .3s;
+  white-space:nowrap;
 }
 .nav-links a::after{
   content:'';position:absolute;left:0;bottom:0;height:1px;width:0;
@@ -196,7 +201,8 @@ main,header,footer{position:relative;z-index:3}
   display:none;background:none;border:1px solid var(--line);
   width:44px;height:44px;border-radius:11px;cursor:pointer;
   position:relative;
-  z-index:901;
+  z-index:960;
+  flex:0 0 auto;
 }
 .burger i{
   position:absolute;left:12px;right:12px;height:1.5px;background:var(--cyan);
@@ -219,32 +225,39 @@ main,header,footer{position:relative;z-index:3}
   box-shadow:0 0 14px rgba(34,225,255,.7);
 }
 
-@media(max-width:880px){
+@media(max-width:1024px){
   .burger{display:block}
   .nav-links{
     position:fixed;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    background:rgba(4,5,10,.96);
-    backdrop-filter:blur(24px);
+    inset:0;
+    top:0;left:0;right:0;bottom:0;
+    background:#04050a;
+    background-image:
+      radial-gradient(900px circle at 18% 15%, rgba(34,225,255,.08), transparent 60%),
+      radial-gradient(700px circle at 88% 85%, rgba(139,92,246,.08), transparent 60%),
+      radial-gradient(600px circle at 50% 50%, rgba(255,47,185,.04), transparent 65%);
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    gap:30px;
-    padding-top:80px;
+    gap:26px;
+    padding-top:90px;
     padding-bottom:40px;
     clip-path:circle(0% at 92% 5%);
     transition:clip-path .7s var(--ease);
-    z-index:899;
+    z-index:949;
+    -webkit-backface-visibility:hidden;
+    backface-visibility:hidden;
+    -webkit-transform:translateZ(0);
+    transform:translateZ(0);
+    will-change:clip-path;
+    overscroll-behavior:contain;
   }
   .nav-links.open{
     clip-path:circle(150% at 92% 5%);
   }
   .nav-links a{
-    font-size:1.1rem;
-    letter-spacing:.28em;
+    font-size:1rem;
+    letter-spacing:.24em;
   }
 }
 
@@ -261,6 +274,7 @@ section{padding:clamp(80px,11vw,150px) clamp(20px,5vw,64px);position:relative}
 .eyebrow::before{
   content:'';width:38px;height:1px;background:var(--cyan);
   box-shadow:0 0 10px var(--cyan);
+  flex:0 0 auto;
 }
 h2.title{
   font-family:'Space Grotesk',sans-serif;
@@ -273,8 +287,9 @@ h2.title em{
   background:linear-gradient(100deg,var(--cyan),var(--violet) 45%,var(--magenta));
   -webkit-background-clip:text;background-clip:text;color:transparent;
 }
-.lead{color:var(--muted);font-size:clamp(.95rem,1.4vw,1.08rem);max-width:66ch}
+.lead{color:var(--muted);font-size:clamp(.95rem,1.4vw,1.08rem);max-width:68ch}
 .lead strong{color:var(--text);font-weight:500}
+.lead + .lead{margin-top:18px}
 
 .reveal{opacity:0;transform:translateY(42px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
 .reveal.in{opacity:1;transform:none}
@@ -330,8 +345,8 @@ h2.title em{
 .hero h1{
   font-family:'Space Grotesk',sans-serif;
   font-weight:700;text-transform:uppercase;
-  font-size:clamp(2.5rem,9vw,7.6rem);
-  line-height:.9;letter-spacing:-.035em;
+  font-size:clamp(2.4rem,8.6vw,7.2rem);
+  line-height:.92;letter-spacing:-.035em;
   margin-bottom:26px;
 }
 .hero h1 .line{display:block;overflow:hidden}
@@ -370,7 +385,7 @@ body.loaded .hero h1 .line:nth-child(3) > span{animation-delay:.34s}
 @keyframes blink{50%{opacity:0}}
 
 .hero p.summary{
-  color:var(--muted);max-width:62ch;font-size:clamp(.95rem,1.4vw,1.08rem);
+  color:var(--muted);max-width:66ch;font-size:clamp(.95rem,1.4vw,1.08rem);
   margin-bottom:38px;
 }
 
@@ -465,135 +480,128 @@ body.loaded .hero h1 .line:nth-child(3) > span{animation-delay:.34s}
   font-size:.9rem;
 }
 @media(max-width:600px){
-  .approach-inner{font-size:.62rem;letter-spacing:.16em;gap:10px 16px}
+  .approach-inner{font-size:.62rem;letter-spacing:.14em;gap:10px 14px}
 }
 
 /* ============================
-   ABOUT
+   INTRO BAND
    ============================ */
-.about-grid{
-  display:grid;grid-template-columns:1.35fr .85fr;gap:clamp(30px,5vw,70px);
-  align-items:start;
+.intro-band{
+  border-bottom:1px solid var(--line);
+  background:
+    radial-gradient(900px circle at 15% 0%,rgba(139,92,246,.10),transparent 60%),
+    radial-gradient(700px circle at 90% 100%,rgba(34,225,255,.07),transparent 60%);
 }
-@media(max-width:900px){.about-grid{grid-template-columns:1fr}}
-
-.info-card{
-  border:1px solid var(--line);border-radius:20px;
-  background:linear-gradient(160deg,rgba(255,255,255,.045),rgba(255,255,255,.012));
-  backdrop-filter:blur(16px);
-  padding:30px;position:relative;overflow:hidden;
+.intro-grid{
+  display:grid;
+  grid-template-columns:1.25fr .75fr;
+  gap:clamp(28px,5vw,64px);
+  align-items:center;
 }
-.info-card::before{
+@media(max-width:900px){.intro-grid{grid-template-columns:1fr}}
+.intro-quote{
+  border-left:2px solid rgba(34,225,255,.5);
+  padding-left:24px;
+}
+.intro-quote p{
+  font-size:clamp(1rem,1.6vw,1.15rem);
+  color:var(--text);
+  line-height:1.7;
+}
+.intro-quote p + p{margin-top:18px;color:var(--muted);font-size:.98rem}
+.intro-quote strong{
+  color:var(--cyan);
+  font-weight:500;
+}
+.intro-badge{
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:28px 26px;
+  background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.008));
+  backdrop-filter:blur(14px);
+  position:relative;
+  overflow:hidden;
+}
+.intro-badge::before{
   content:'';position:absolute;top:0;left:0;right:0;height:1px;
-  background:linear-gradient(90deg,transparent,var(--cyan),transparent);
+  background:linear-gradient(90deg,transparent,var(--magenta),transparent);
   animation:sweep 4s ease-in-out infinite;
 }
 @keyframes sweep{0%,100%{opacity:.25}50%{opacity:1}}
-.info-card h3{
-  font-family:var(--mono);font-size:.68rem;letter-spacing:.3em;
-  text-transform:uppercase;color:var(--cyan);margin-bottom:22px;
+.intro-badge h3{
+  font-family:var(--mono);font-size:.66rem;letter-spacing:.3em;
+  text-transform:uppercase;color:var(--magenta);margin-bottom:20px;
 }
-.info-row{
-  display:flex;justify-content:space-between;gap:14px;
-  padding:13px 0;border-bottom:1px dashed rgba(120,160,220,.13);
-  font-size:.88rem;
+.intro-badge ul{list-style:none;display:flex;flex-direction:column;gap:13px}
+.intro-badge li{
+  display:flex;gap:11px;align-items:flex-start;
+  font-size:.88rem;color:#a9b8cc;line-height:1.55;
 }
-.info-row:last-child{border-bottom:none}
-.info-row span:first-child{
-  font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--muted);
+.intro-badge li::before{
+  content:'◆';
+  color:var(--cyan);
+  font-size:.6rem;
   flex:0 0 auto;
+  margin-top:6px;
+  text-shadow:0 0 8px rgba(34,225,255,.9);
 }
-.info-row span:last-child{text-align:right;color:var(--text)}
-
-.pillars{display:grid;gap:14px;margin-top:34px}
-.pillar{
-  display:flex;gap:16px;align-items:flex-start;
-  padding:18px 20px;border-radius:14px;
-  border:1px solid var(--line);
-  background:linear-gradient(120deg,rgba(255,255,255,.032),transparent);
-  transition:transform .45s var(--ease),border-color .45s,background .45s;
-}
-.pillar:hover{
-  transform:translateX(9px);
-  border-color:rgba(34,225,255,.45);
-  background:linear-gradient(120deg,rgba(34,225,255,.08),transparent);
-}
-.pillar i{
-  flex:0 0 34px;height:34px;border-radius:9px;display:grid;place-items:center;
-  background:linear-gradient(135deg,rgba(34,225,255,.18),rgba(139,92,246,.18));
-  border:1px solid var(--glass-b);
-  font-style:normal;font-size:.9rem;
-}
-.pillar h4{font-size:.95rem;font-weight:600;margin-bottom:3px}
-.pillar p{font-size:.84rem;color:var(--muted);line-height:1.55}
 
 /* ============================
-   PHOTO GALLERY
+   AGENTIC EXPLAINER
    ============================ */
-.gallery-grid{
+.agentic-explain{
+  max-width:860px;
+}
+
+/* Task → Outcome compare */
+.compare{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-  gap:24px;
-  margin-top:56px;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  margin-top:52px;
 }
-.gallery-item{
-  position:relative;
-  border-radius:22px;
-  overflow:hidden;
+@media(max-width:760px){.compare{grid-template-columns:1fr}}
+.compare-col{
   border:1px solid var(--line);
-  background:linear-gradient(160deg,rgba(255,255,255,.04),transparent);
-  transition:transform .6s var(--ease),border-color .6s,box-shadow .6s;
-  margin:0;
+  border-radius:18px;
+  padding:28px 26px;
+  background:linear-gradient(160deg,rgba(255,255,255,.035),rgba(255,255,255,.008));
+  backdrop-filter:blur(12px);
+  position:relative;
+  overflow:hidden;
+  transition:transform .5s var(--ease),border-color .5s;
 }
-.gallery-item:hover{
-  transform:translateY(-8px);
-  border-color:rgba(34,225,255,.45);
-  box-shadow:0 30px 70px -35px rgba(34,225,255,.6);
+.compare-col:hover{transform:translateY(-6px)}
+.compare-col.old{border-color:rgba(120,160,220,.18)}
+.compare-col.new{
+  border-color:rgba(34,225,255,.35);
+  background:linear-gradient(160deg,rgba(34,225,255,.09),rgba(139,92,246,.04));
 }
-.gallery-item img{
-  width:100%;
-  height:460px;
-  object-fit:cover;
-  object-position:center top;
-  display:block;
-  filter:grayscale(.3) contrast(1.05);
-  transition:transform .9s var(--ease),filter .9s var(--ease);
+.compare-col.new::before{
+  content:'';position:absolute;top:0;left:0;width:100%;height:2px;
+  background:linear-gradient(90deg,var(--cyan),var(--magenta));
 }
-.gallery-item:hover img{
-  transform:scale(1.06);
-  filter:grayscale(0) contrast(1.1);
-}
-.gallery-item figcaption{
-  position:absolute;
-  left:0;right:0;bottom:0;
-  padding:26px 24px 22px;
-  background:linear-gradient(to top,rgba(4,5,10,.94) 0%,rgba(4,5,10,.55) 60%,transparent 100%);
-  display:flex;
-  flex-direction:column;
-  gap:5px;
-}
-.gallery-loc{
+.compare-tag{
   font-family:var(--mono);
-  font-size:.66rem;
-  letter-spacing:.24em;
+  font-size:.6rem;
+  letter-spacing:.26em;
   text-transform:uppercase;
-  color:var(--cyan);
+  color:var(--muted);
+  display:block;
+  margin-bottom:14px;
 }
-.gallery-desc{
-  font-size:.88rem;
-  color:var(--text);
-  line-height:1.5;
+.compare-col.new .compare-tag{color:var(--cyan)}
+.compare-col h3{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:1.08rem;
+  font-weight:600;
+  margin-bottom:12px;
+  letter-spacing:-.01em;
 }
-.gallery-grid.single{
-  grid-template-columns:1fr;
-  max-width:800px;
-  margin-left:auto;
-  margin-right:auto;
-}
-.gallery-grid.single .gallery-item img{
-  height:520px;
-  object-position:center 20%;
+.compare-col p{
+  font-size:.86rem;
+  color:var(--muted);
+  line-height:1.65;
 }
 
 /* ============================
@@ -649,6 +657,21 @@ body.loaded .hero h1 .line:nth-child(3) > span{animation-delay:.34s}
   font-size:.84rem;
   color:var(--muted);
   line-height:1.6;
+}
+.service-card.primary{
+  border-color:rgba(34,225,255,.3);
+  background:linear-gradient(160deg,rgba(34,225,255,.075),rgba(139,92,246,.03));
+  box-shadow:0 20px 50px -40px rgba(34,225,255,.7);
+}
+.service-card.primary::before{opacity:1}
+.service-card.primary:hover{
+  border-color:rgba(34,225,255,.55);
+  background:linear-gradient(160deg,rgba(34,225,255,.12),rgba(139,92,246,.06));
+}
+.service-card.primary .service-num{color:var(--magenta)}
+.service-card.primary h3{
+  background:linear-gradient(100deg,#fff,#a9d9ff);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
 }
 
 /* ============================
@@ -836,181 +859,6 @@ body.loaded .hero h1 .line:nth-child(3) > span{animation-delay:.34s}
 }
 
 /* ============================
-   HOW IT WORKS
-   ============================ */
-.how-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:18px;
-  margin-top:56px;
-}
-.how-step{
-  position:relative;
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:30px 26px;
-  background:linear-gradient(160deg,rgba(255,255,255,.04),rgba(255,255,255,.008));
-  backdrop-filter:blur(12px);
-  transition:transform .5s var(--ease),border-color .5s;
-}
-.how-step:hover{
-  transform:translateY(-7px);
-  border-color:rgba(34,225,255,.35);
-}
-.how-num{
-  font-family:'Space Grotesk',sans-serif;
-  font-size:2.4rem;
-  font-weight:700;
-  line-height:1;
-  background:linear-gradient(180deg,var(--cyan),var(--violet));
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-  display:block;
-  margin-bottom:16px;
-  opacity:.85;
-}
-.how-step h3{
-  font-family:'Space Grotesk',sans-serif;
-  font-size:1.02rem;
-  font-weight:600;
-  margin-bottom:10px;
-  line-height:1.3;
-}
-.how-step p{
-  font-size:.85rem;
-  color:var(--muted);
-  line-height:1.6;
-}
-.how-step code{
-  font-family:var(--mono);
-  font-size:.78rem;
-  color:var(--cyan);
-  background:rgba(34,225,255,.08);
-  padding:2px 7px;
-  border-radius:5px;
-  border:1px solid rgba(34,225,255,.2);
-  letter-spacing:.02em;
-}
-.how-tagline{
-  margin-top:44px;
-  text-align:center;
-  font-family:'Space Grotesk',sans-serif;
-  font-size:clamp(1.2rem,3vw,1.8rem);
-  font-weight:700;
-  letter-spacing:.06em;
-  text-transform:uppercase;
-}
-.how-tagline em{
-  font-style:normal;
-  background:linear-gradient(100deg,var(--cyan),var(--violet) 45%,var(--magenta));
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-}
-
-/* ============================
-   EXPERIENCE TIMELINE
-   ============================ */
-.timeline{position:relative;margin-top:66px;padding:10px 0}
-.tl-line{
-  position:absolute;left:50%;top:0;bottom:0;width:1px;
-  background:rgba(120,160,220,.15);transform:translateX(-50%);
-}
-.tl-fill{
-  position:absolute;left:0;top:0;width:100%;height:0;
-  background:linear-gradient(180deg,var(--cyan),var(--violet),var(--magenta));
-  box-shadow:0 0 16px rgba(34,225,255,.8);
-  transition:height .12s linear;
-}
-.tl-item{
-  position:relative;width:50%;padding:0 54px 52px 0;
-}
-.tl-item:nth-child(even){
-  margin-left:50%;padding:0 0 52px 54px;
-}
-.tl-dot{
-  position:absolute;top:26px;right:-6px;
-  width:12px;height:12px;border-radius:50%;
-  background:#05060c;border:2px solid var(--cyan);
-  box-shadow:0 0 0 5px rgba(34,225,255,.09),0 0 18px rgba(34,225,255,.8);
-  z-index:2;
-}
-.tl-item:nth-child(even) .tl-dot{right:auto;left:-6px;border-color:var(--magenta);box-shadow:0 0 0 5px rgba(255,47,185,.09),0 0 18px rgba(255,47,185,.8)}
-.tl-card{
-  border:1px solid var(--line);border-radius:18px;
-  background:linear-gradient(155deg,rgba(255,255,255,.045),rgba(255,255,255,.01));
-  backdrop-filter:blur(14px);
-  padding:26px 26px 24px;position:relative;overflow:hidden;
-  transition:transform .5s var(--ease),border-color .5s,box-shadow .5s;
-}
-.tl-card::after{
-  content:'';position:absolute;inset:0;border-radius:18px;pointer-events:none;
-  background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),rgba(34,225,255,.11),transparent 60%);
-  opacity:0;transition:opacity .5s;
-}
-.tl-card:hover::after{opacity:1}
-.tl-card:hover{
-  transform:translateY(-7px);
-  border-color:rgba(34,225,255,.42);
-  box-shadow:0 26px 60px -30px rgba(34,225,255,.55);
-}
-.tl-date{
-  font-family:var(--mono);font-size:.67rem;letter-spacing:.22em;
-  text-transform:uppercase;color:var(--gold);display:block;margin-bottom:11px;
-}
-.tl-card h3{
-  font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:600;
-  letter-spacing:-.01em;margin-bottom:5px;
-}
-.tl-card h4{
-  font-size:.8rem;font-weight:500;color:var(--cyan);
-  letter-spacing:.05em;margin-bottom:13px;
-}
-.tl-card p{font-size:.87rem;color:var(--muted);line-height:1.68}
-.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
-.chip{
-  font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;
-  text-transform:uppercase;padding:5px 11px;border-radius:99px;
-  border:1px solid rgba(120,160,220,.22);
-  color:#9fb0c7;background:rgba(255,255,255,.025);
-  opacity:0;transform:translateY(10px);
-}
-.in .chip{animation:chipIn .5s var(--ease) forwards;animation-delay:calc(var(--i,0)*35ms)}
-@keyframes chipIn{to{opacity:1;transform:none}}
-
-@media(max-width:880px){
-  .tl-line{left:9px}
-  .tl-item,.tl-item:nth-child(even){
-    width:100%;margin-left:0;padding:0 0 42px 40px;
-  }
-  .tl-dot,.tl-item:nth-child(even) .tl-dot{left:3px;right:auto}
-}
-
-.earlier{margin-top:70px}
-.earlier h3{
-  font-family:var(--mono);font-size:.7rem;letter-spacing:.3em;
-  text-transform:uppercase;color:var(--muted);margin-bottom:26px;
-  display:flex;align-items:center;gap:16px;
-}
-.earlier h3::after{content:'';flex:1;height:1px;background:var(--line)}
-.mini-grid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(228px,1fr));gap:14px;
-}
-.mini{
-  border:1px solid var(--line);border-radius:14px;padding:20px;
-  background:linear-gradient(150deg,rgba(255,255,255,.035),transparent);
-  transition:transform .45s var(--ease),border-color .45s,background .45s;
-}
-.mini:hover{
-  transform:translateY(-6px);border-color:rgba(255,47,185,.4);
-  background:linear-gradient(150deg,rgba(255,47,185,.08),transparent);
-}
-.mini b{display:block;font-size:.9rem;font-weight:600;margin-bottom:4px}
-.mini em{
-  font-style:normal;font-family:var(--mono);font-size:.63rem;
-  letter-spacing:.13em;text-transform:uppercase;color:var(--gold);
-  display:block;margin-bottom:9px;
-}
-.mini p{font-size:.8rem;color:var(--muted);line-height:1.55}
-
-/* ============================
    SKILLS
    ============================ */
 .skill-grid{
@@ -1044,6 +892,7 @@ body.loaded .hero h1 .line:nth-child(3) > span{animation-delay:.34s}
   width:9px;height:9px;border-radius:3px;display:inline-block;
   background:linear-gradient(135deg,var(--cyan),var(--violet));
   box-shadow:0 0 12px rgba(34,225,255,.85);
+  flex:0 0 auto;
 }
 .skill-tags{display:flex;flex-wrap:wrap;gap:8px}
 .tag{
@@ -1055,6 +904,7 @@ body.loaded .hero h1 .line:nth-child(3) > span{animation-delay:.34s}
   opacity:0;transform:translateY(10px);
 }
 .in .tag{animation:chipIn .5s var(--ease) forwards;animation-delay:calc(var(--i,0)*30ms)}
+@keyframes chipIn{to{opacity:1;transform:none}}
 .tag:hover{
   color:#03040a;border-color:transparent;
   background:linear-gradient(100deg,var(--cyan),var(--violet));
@@ -1062,43 +912,70 @@ body.loaded .hero h1 .line:nth-child(3) > span{animation-delay:.34s}
 }
 
 /* ============================
-   LANGUAGES
+   ERA SECTION
    ============================ */
-.lang-wrap{
-  margin-top:70px;display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:26px;align-items:center;
+.era{
+  border-top:1px solid var(--line);
+  background:
+    radial-gradient(900px circle at 85% 10%,rgba(34,225,255,.08),transparent 60%),
+    radial-gradient(700px circle at 10% 90%,rgba(255,47,185,.07),transparent 60%);
 }
-.lang{
-  text-align:center;position:relative;
-  padding:26px 12px;border-radius:20px;
+.era-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:clamp(30px,5vw,64px);
+  align-items:start;
+}
+@media(max-width:900px){.era-grid{grid-template-columns:1fr}}
+.era-list{display:flex;flex-direction:column;gap:18px;margin-top:8px}
+.era-item{
   border:1px solid var(--line);
-  background:linear-gradient(160deg,rgba(255,255,255,.04),transparent);
-  transition:transform .5s var(--ease),border-color .5s;
+  border-radius:16px;
+  padding:24px 24px 22px;
+  background:linear-gradient(150deg,rgba(255,255,255,.04),rgba(255,255,255,.006));
+  backdrop-filter:blur(12px);
+  transition:transform .5s var(--ease),border-color .5s,background .5s;
+  position:relative;
+  overflow:hidden;
 }
-.lang:hover{transform:translateY(-8px);border-color:rgba(139,92,246,.45)}
-.lang svg{width:132px;height:132px;transform:rotate(-90deg);margin:0 auto}
-.lang svg circle{fill:none;stroke-width:4;stroke-linecap:round}
-.ring-bg{stroke:rgba(120,160,220,.13)}
-.ring-fg{
-  stroke:url(#langGrad);
-  stroke-dasharray:326.7;
-  stroke-dashoffset:326.7;
-  transition:stroke-dashoffset 1.8s var(--ease);
-  filter:drop-shadow(0 0 7px rgba(34,225,255,.85));
+.era-item::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:2px;
+  background:linear-gradient(180deg,var(--cyan),var(--magenta));
+  opacity:.5;
+  transition:opacity .5s;
 }
-.lang-pct{
-  position:absolute;top:calc(50% - 44px);left:50%;transform:translate(-50%,-50%);
-  font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;
-  background:linear-gradient(180deg,#fff,#8fa0b8);
-  -webkit-background-clip:text;background-clip:text;color:transparent;
+.era-item:hover{
+  transform:translateX(8px);
+  border-color:rgba(34,225,255,.4);
+  background:linear-gradient(150deg,rgba(34,225,255,.07),rgba(139,92,246,.03));
 }
-.lang-body{margin-top:-42px;position:relative}
-.lang-body strong{display:block;font-size:.96rem;font-weight:600;margin-bottom:2px}
-.lang-body span{
-  font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--muted);
+.era-item:hover::before{opacity:1}
+.era-item h3{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:1.02rem;
+  font-weight:600;
+  margin-bottom:8px;
+  letter-spacing:-.01em;
 }
+.era-item p{font-size:.86rem;color:var(--muted);line-height:1.65}
+.era-item span{
+  font-family:var(--mono);
+  font-size:.6rem;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--cyan);
+  display:block;
+  margin-bottom:12px;
+}
+.era-cta{
+  margin-top:36px;
+  padding:26px 28px;
+  border-radius:18px;
+  border:1px dashed rgba(120,160,220,.24);
+  background:rgba(255,255,255,.02);
+}
+.era-cta p{font-size:.92rem;color:var(--muted);line-height:1.7}
+.era-cta strong{color:var(--text);font-weight:500}
 
 /* ============================
    TECH MARQUEE
@@ -1135,7 +1012,7 @@ body.loaded .hero h1 .line:nth-child(3) > span{animation-delay:.34s}
 .contact .eyebrow::before{display:none}
 .contact h2{
   font-family:'Space Grotesk',sans-serif;
-  font-size:clamp(2.1rem,7vw,5.4rem);line-height:1;font-weight:700;
+  font-size:clamp(2rem,6.6vw,5rem);line-height:1.02;font-weight:700;
   letter-spacing:-.035em;text-transform:uppercase;margin-bottom:26px;
 }
 .contact h2 em{
@@ -1190,8 +1067,8 @@ footer a:hover{color:var(--magenta)}
   }
   .hero .wrap{width:100%}
   .status-pill{
-    font-size:.58rem;
-    letter-spacing:.12em;
+    font-size:.56rem;
+    letter-spacing:.1em;
     padding:7px 14px 7px 11px;
     margin-bottom:24px;
     max-width:100%;
@@ -1200,13 +1077,13 @@ footer a:hover{color:var(--magenta)}
   }
   .status-pill .dot{flex:0 0 auto}
   .hero h1{
-    font-size:clamp(2.1rem,12vw,3.2rem);
-    line-height:.95;
+    font-size:clamp(2rem,11.5vw,3.1rem);
+    line-height:.96;
     margin-bottom:20px;
   }
   .hero .role-line{
-    font-size:.72rem;
-    letter-spacing:.1em;
+    font-size:.7rem;
+    letter-spacing:.08em;
     margin-bottom:20px;
     min-height:2.4em;
   }
@@ -1225,11 +1102,11 @@ footer a:hover{color:var(--magenta)}
     width:100%;
     justify-content:center;
     padding:15px 20px;
-    font-size:.7rem;
-    letter-spacing:.14em;
+    font-size:.68rem;
+    letter-spacing:.12em;
     box-sizing:border-box;
   }
-  .cta-row .btn span{white-space:nowrap}
+  .cta-row .btn span{white-space:normal;text-align:center}
   .cta-row .btn .arrow{margin-left:6px}
   .hero-stats{
     grid-template-columns:repeat(2,1fr);
@@ -1238,27 +1115,25 @@ footer a:hover{color:var(--magenta)}
     max-width:100%;
   }
   .hstat{padding-right:0}
-  .hstat b{font-size:1.65rem}
-  .hstat small{font-size:.58rem;letter-spacing:.14em}
+  .hstat b{font-size:1.6rem}
+  .hstat small{font-size:.56rem;letter-spacing:.12em}
   .scroll-cue{display:none}
   section{padding-left:18px;padding-right:18px}
-  h2.title{font-size:clamp(1.7rem,7.5vw,2.4rem);line-height:1.1}
-  .eyebrow{font-size:.62rem;letter-spacing:.3em}
-  .gallery-grid.single{max-width:100%;margin-top:36px}
-  .gallery-grid.single .gallery-item img{height:420px}
-  .gallery-item figcaption{padding:20px 18px 18px}
-  .gallery-desc{font-size:.82rem}
-  .price-card{padding:28px 24px 26px}
+  h2.title{font-size:clamp(1.65rem,7.2vw,2.35rem);line-height:1.12}
+  .eyebrow{font-size:.6rem;letter-spacing:.26em}
+  .intro-quote{padding-left:18px}
+  .compare-col{padding:24px 22px}
+  .price-card{padding:28px 22px 26px}
   .price-card.featured::after{right:18px}
-  .how-step{padding:24px 22px}
-  .how-num{font-size:2rem}
-  .contact h2{font-size:clamp(1.9rem,9vw,3rem)}
+  .era-item{padding:20px 20px 18px}
+  .era-cta{padding:22px 22px}
+  .contact h2{font-size:clamp(1.7rem,8.6vw,2.7rem)}
   .contact .cta-row{width:100%}
   .contact .cta-row .btn{width:100%}
   .meta-chip{
-    font-size:.58rem;
-    padding:9px 14px;
-    letter-spacing:.1em;
+    font-size:.56rem;
+    padding:9px 13px;
+    letter-spacing:.08em;
     word-break:break-word;
     max-width:100%;
   }
@@ -1266,29 +1141,25 @@ footer a:hover{color:var(--magenta)}
     flex-direction:column;
     align-items:flex-start;
     text-align:left;
-    font-size:.58rem;
+    font-size:.56rem;
   }
   .footer-links{
     width:100%;
     justify-content:flex-start;
     word-break:break-word;
   }
-  .info-row{flex-direction:column;gap:4px;align-items:flex-start}
-  .info-row span:last-child{text-align:left}
 }
 
 @media(max-width:380px){
-  .hero h1{font-size:clamp(1.8rem,11vw,2.6rem)}
-  .cta-row .btn{padding:13px 16px;font-size:.64rem}
+  .hero h1{font-size:clamp(1.75rem,10.5vw,2.5rem)}
+  .cta-row .btn{padding:13px 14px;font-size:.62rem}
   .hero-stats{grid-template-columns:1fr 1fr}
-  .hstat b{font-size:1.4rem}
-  .gallery-grid.single .gallery-item img{height:340px}
+  .hstat b{font-size:1.35rem}
 }
 
 @media(min-width:601px) and (max-width:880px){
   .cta-row{gap:14px}
-  .cta-row .btn{padding:14px 24px;font-size:.7rem}
-  .gallery-grid.single .gallery-item img{height:480px}
+  .cta-row .btn{padding:14px 24px;font-size:.68rem}
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -1302,7 +1173,7 @@ footer a:hover{color:var(--magenta)}
 <div id="loader">
   <div class="loader-core">
     <div class="loader-rings"><i></i><i></i><i></i><b></b></div>
-    <p>Initialising Consultant Profile</p>
+    <p>Initialising Agentic Systems</p>
     <div class="loader-bar"><span></span></div>
   </div>
 </div>
@@ -1326,15 +1197,14 @@ footer a:hover{color:var(--magenta)}
 <header class="nav" id="nav">
   <a href="#home" class="brand">
     <span class="mark"></span>
-    <span>Jonathan Roche</span>
+    <span>Agentico</span>
   </a>
   <nav class="nav-links" id="navLinks">
     <a href="#home" class="active">Home</a>
-    <a href="#about">Profile</a>
+    <a href="#agentic">Agentic</a>
     <a href="#services">Services</a>
-    <a href="#packages">Start for $200</a>
-    <a href="#process">Process</a>
-    <a href="#experience">Background</a>
+    <a href="#packages">Packages</a>
+    <a href="#capabilities">Capabilities</a>
     <a href="#contact">Contact</a>
   </nav>
   <button class="burger" id="burger" aria-label="Menu"><i></i><i></i><i></i></button>
@@ -1344,14 +1214,39 @@ footer a:hover{color:var(--magenta)}
 
 <!-- ============ HERO ============ -->
 <section class="hero" id="home">
-  <div class="hero-grid-floor"></div><div class="wrap">
-    <div class="status-pill"><span class="dot"></span> Practical Business Transformation · Phnom Penh, Cambodia</div>
-    <h1><span class="line"><span>Make Your Business</span></span><span class="line"><span class="grad">Smarter. Faster.</span></span><span class="line"><span>More Efficient.</span></span></h1>
+  <div class="hero-grid-floor"></div>
+  <div class="wrap">
+    <div class="status-pill"><span class="dot"></span> Your transformation starts here</div>
+
+    <h1>
+      <span class="line"><span>From Digital</span></span>
+      <span class="line"><span class="grad">To Agentic</span></span>
+      <span class="line"><span>Transformation</span></span>
+    </h1>
+
     <div class="role-line"><span id="typed"></span><span class="cursor"></span></div>
-    <p class="summary">Practical AI, automation, operational improvement and digital transformation for businesses in Cambodia and Southeast Asia. I help companies identify where technology can <strong>save time, reduce repetitive work, improve customer experience, strengthen operations and create new commercial opportunities</strong>. No technology for technology's sake.</p>
-    <div class="cta-row"><a href="#packages" class="btn solid"><span>Start with a $200 Audit</span><span class="arrow">→</span></a><a href="#contact" class="btn"><span>Discuss Your Business</span><span class="arrow">→</span></a></div>
-    <div class="hero-stats"><div class="hstat reveal"><b data-count="15" data-suffix="+">0</b><small>Years International Experience</small></div><div class="hstat reveal d1"><b data-count="3" data-suffix="">0</b><small>Countries · France · China · Cambodia</small></div><div class="hstat reveal d2"><b data-count="4" data-suffix="">0</b><small>Core Business Services</small></div><div class="hstat reveal d3"><b data-count="200" data-prefix="$">0</b><small>Fixed-Price Entry Audit</small></div></div>
-  </div><div class="scroll-cue"><span>Scroll</span><i></i></div>
+
+    <p class="summary">
+      Agentic AI represents a groundbreaking shift in the business landscape, transforming how
+      companies operate, innovate, and compete. Unlike traditional automation, AI agents are
+      capable of <strong>autonomous action</strong>, <strong>real-time adaptation</strong>, and
+      delivering highly personalized experiences at scale.
+    </p>
+
+    <div class="cta-row">
+      <a href="#packages" class="btn solid"><span>View Packages</span><span class="arrow">→</span></a>
+      <a href="#contact" class="btn"><span>Book a Consultation</span><span class="arrow">→</span></a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hstat reveal"><b data-count="8" data-suffix="">0</b><small>Agentic Service Domains</small></div>
+      <div class="hstat reveal d1"><b data-count="3" data-suffix="">0</b><small>Engagement Tiers</small></div>
+      <div class="hstat reveal d2"><b data-count="5" data-suffix="">0</b><small>Step Delivery Process</small></div>
+      <div class="hstat reveal d3"><b data-count="24" data-suffix="/7">0</b><small>Monitoring &amp; Support</small></div>
+    </div>
+  </div>
+
+  <div class="scroll-cue"><span>Scroll</span><i></i></div>
 </section>
 
 <!-- ============ APPROACH STRIP ============ -->
@@ -1369,203 +1264,482 @@ footer a:hover{color:var(--magenta)}
   </div>
 </div>
 
-<!-- ============ ABOUT ============ -->
-<section id="about"><div class="wrap"><div class="about-grid"><div>
-<div class="eyebrow reveal">The Consultant</div><h2 class="title reveal d1">Business first.<br><em>Technology where it creates value.</em></h2>
-<p class="lead reveal d2">I'm <strong>Jonathan Victor Alexandre Roche</strong>, an independent consultant based in Phnom Penh. I combine 15+ years of international operational and security leadership across France, China and Cambodia with focused work since 2020 in applied AI, automation, digital transformation, AI ethics, cybersecurity awareness and emerging technologies.</p>
-<p class="lead reveal d2" style="margin-top:18px"><strong>First, I understand the business:</strong> how customers arrive, how employees work, where time is lost, where opportunities are missed and where operational or human risks exist. Then we decide whether AI, automation, digital tools, stronger controls — or simply a better process — can improve it.</p>
-<p class="lead reveal d2" style="margin-top:18px">I lead business analysis, operational design, transformation strategy and project coordination. Where specialist software engineering, infrastructure or technical cybersecurity expertise is required, I coordinate suitable technical resources rather than overstating what one consultant should deliver alone.</p>
-<div class="pillars"><div class="pillar reveal d3"><i>◈</i><div><h4>Start Small, Prove Value</h4><p>Begin with a $200 fixed-price opportunity audit. Continue only when there is a credible business case.</p></div></div><div class="pillar reveal d4"><i>◆</i><div><h4>Fixed-Price Clarity</h4><p>Scope, deliverables and price are agreed before implementation begins.</p></div></div><div class="pillar reveal d5"><i>◇</i><div><h4>Local Presence, International Perspective</h4><p>On-the-ground in Phnom Penh, with international operational experience and multilingual capability.</p></div></div></div></div>
-<aside class="info-card reveal d2"><h3>Engagement Overview</h3><div class="info-row"><span>Base</span><span>Phnom Penh, Cambodia</span></div><div class="info-row"><span>Coverage</span><span>Cambodia · SEA · International</span></div><div class="info-row"><span>Clients</span><span>SMEs · Growing Businesses · Enterprise</span></div><div class="info-row"><span>Delivery</span><span>Advisory · Implementation Coordination</span></div><div class="info-row"><span>Languages</span><span>FR · EN · 中文</span></div><div class="info-row"><span>Focus</span><span>Business · Operations · AI · Automation</span></div><div class="info-row"><span>Entry</span><span>$200 Fixed Opportunity Audit</span></div></aside>
-</div></div></section>
-
-<!-- ============ SERVICES ============ -->
-<section id="services"><div class="wrap"><div class="eyebrow reveal">How I Help</div><h2 class="title reveal d1">Four ways to create<br><em>practical business value.</em></h2><p class="lead reveal d2">The objective is not to “use AI.” It is to improve revenue, efficiency, customer experience, operations or market access — using technology only where it makes sense.</p><div class="service-grid">
-<div class="service-card reveal"><span class="service-num">01 / AI &amp; AUTOMATION</span><h3>AI &amp; Business Automation</h3><p>Identify repetitive work and commercial opportunities for smarter workflows: lead qualification, CRM follow-up, guest/customer communication, reporting, internal knowledge, multilingual communication and practical AI agents.</p></div>
-<div class="service-card reveal d1"><span class="service-num">02 / OPERATIONS</span><h3>Digital &amp; Operational Transformation</h3><p>Review workflows, systems and bottlenecks; redesign processes and coordinate practical modernization through better tools, reporting, integration and automation.</p></div>
-<div class="service-card reveal d2"><span class="service-num">03 / RISK</span><h3>Security, Risk &amp; Resilience</h3><p>Management-level review of human risk, security awareness, operational vulnerabilities, access processes and resilience. Specialist technical cybersecurity work is coordinated when required.</p></div>
-<div class="service-card reveal d3"><span class="service-num">04 / CAMBODIA &amp; ASEAN</span><h3>Commercial &amp; Market-Entry Advisory</h3><p>On-the-ground support for market research, opportunity identification, local representation, partnerships, business development, project origination, multilingual liaison and coordination between international and local stakeholders.</p></div>
-</div></div></section>
-
-<!-- ============ PHOTO GALLERY ============ -->
-<section id="gallery">
+<!-- ============ INTRO BAND ============ -->
+<section class="intro-band">
   <div class="wrap">
-    <div class="eyebrow reveal">Visual Profile</div>
-    <h2 class="title reveal d1">In the field,<em> on the ground.</em></h2>
+    <div class="intro-grid">
+      <div class="intro-quote reveal">
+        <div class="eyebrow">Embracing the Future of AI</div>
+        <p>
+          <strong>Artificial intelligence is entering a new stage of growth</strong> — moving
+          beyond development and into widespread, real-world use.
+        </p>
+        <p>
+          The organisations that lead the next decade will not be the ones with the most pilots,
+          but the ones that put autonomous systems to work on real objectives, with real
+          guardrails, inside real operations. We exist to make that transition practical,
+          measurable and safe.
+        </p>
+      </div>
 
-    <div class="gallery-grid single">
-      <figure class="gallery-item reveal d2">
-        <img src="https://i.ibb.co/zWpBFP1Z/photo-2026-09-16-11-32-19-2.jpg"
-             alt="Jonathan Roche — AI & Digital Transformation Consultant, Phnom Penh"
-             loading="lazy" />
-        <figcaption>
-          <span class="gallery-loc">Phnom Penh, Cambodia</span>
-          <span class="gallery-desc">Based in the Kingdom of Cambodia — advising businesses across Southeast Asia and beyond.</span>
-        </figcaption>
-      </figure>
+      <aside class="intro-badge reveal d2">
+        <h3>What We Do First</h3>
+        <ul>
+          <li>Analyze the company, its operations and the services it sells</li>
+          <li>Propose solutions such as autonomous AI agents</li>
+          <li>On agreement, we set up the solution</li>
+          <li>Test and validate before going live</li>
+          <li>Train your teams to work alongside agents</li>
+          <li>Provide ongoing support and optimisation</li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT IS AGENTIC ============ -->
+<section id="agentic">
+  <div class="wrap">
+    <div class="agentic-explain">
+      <div class="eyebrow reveal">What Is Agentic Transformation?</div>
+      <h2 class="title reveal d1">From tasks to outcomes.<br><em>The shift that changes everything.</em></h2>
+      <p class="lead reveal d2">
+        Traditional digital transformation automates steps — where humans still coordinate the
+        process. Someone still has to decide what happens next, move data between tools, check
+        the result and fix what went wrong.
+      </p>
+      <p class="lead reveal d2">
+        <strong>Agentic AI changes that.</strong> Given an approved objective, an AI agent
+        autonomously executes multi-step actions, calls tools, and self-corrects until the goal
+        is met. The human moves from operator to supervisor — setting direction, approving
+        boundaries and reviewing outcomes rather than performing the sequence.
+      </p>
+      <p class="lead reveal d2">
+        This is not a faster version of automation. It is a different operating model: work is
+        delegated as an <strong>objective</strong>, not as a task list. Agents plan, act,
+        observe their results and adapt — continuously, at machine speed, within the limits you
+        define.
+      </p>
+    </div>
+
+    <!-- COMPARE -->
+    <div class="compare">
+      <div class="compare-col old reveal d1">
+        <span class="compare-tag">Traditional Digital Transformation</span>
+        <h3>Automates the steps</h3>
+        <p>
+          Each task is automated individually. A human still sequences the work, moves
+          information between systems, checks outputs and resolves exceptions. Scale means
+          more people coordinating more steps.
+        </p>
+      </div>
+      <div class="compare-col new reveal d2">
+        <span class="compare-tag">Agentic Transformation</span>
+        <h3>Delivers the outcome</h3>
+        <p>
+          An approved objective is handed to an agent. It plans the steps, calls the tools,
+          reads the results, corrects itself and reports back — until the goal is met. Scale
+          means more objectives, not more coordination.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AGENTIC SERVICES ============ -->
+<section id="services">
+  <div class="wrap">
+    <div class="eyebrow reveal">Core Offering</div>
+    <h2 class="title reveal d1">Agentic AI:<br><em>unlocking the next phase of digital transformation.</em></h2>
+    <p class="lead reveal d2">
+      Our primary work is agentic — building, configuring and running autonomous systems that
+      deliver outcomes inside your business. Everything else we offer supports that foundation.
+    </p>
+
+    <div class="service-grid">
+      <div class="service-card primary reveal">
+        <span class="service-num">01 / AGENT SETUP</span>
+        <h3>Autonomous Agent Setup &amp; Configuration</h3>
+        <p>Deploy and configure autonomous agents with the right models, tools, memory and permissions for your specific operational context.</p>
+      </div>
+
+      <div class="service-card primary reveal d1">
+        <span class="service-num">02 / CUSTOM AGENTS</span>
+        <h3>Custom Agent Development</h3>
+        <p>Purpose-built agents designed around your workflows, your data and your objectives — not generic templates retrofitted to your business.</p>
+      </div>
+
+      <div class="service-card primary reveal d2">
+        <span class="service-num">03 / MULTI-AGENT TEAMS</span>
+        <h3>Teams of Cooperating Agents</h3>
+        <p>Orchestrate multiple agents that divide work, hand off tasks, review each other's output and escalate to humans when needed.</p>
+      </div>
+
+      <div class="service-card primary reveal d3">
+        <span class="service-num">04 / WORKFLOWS</span>
+        <h3>Agentic Workflow Design</h3>
+        <p>Redesign processes around objectives rather than task sequences — mapping where agents act, where they decide and where humans approve.</p>
+      </div>
+
+      <div class="service-card primary reveal d4">
+        <span class="service-num">05 / INTEGRATION</span>
+        <h3>Tool &amp; System Integration</h3>
+        <p>Connect agents to your real systems — CRM, ERP, email, databases, internal APIs — so they can act on live data instead of isolated demos.</p>
+      </div>
+
+      <div class="service-card primary reveal d5">
+        <span class="service-num">06 / FORMATION</span>
+        <h3>Agent Formation &amp; Enablement</h3>
+        <p>Train employees and leadership to brief, supervise and evaluate agents confidently — including prompt design, review habits and escalation rules.</p>
+      </div>
+
+      <div class="service-card primary reveal">
+        <span class="service-num">07 / SUPPORT</span>
+        <h3>Agent Monitoring &amp; Support</h3>
+        <p>Continuous oversight, performance tuning, failure analysis and updates as models, tools and business requirements evolve.</p>
+      </div>
+
+      <div class="service-card primary reveal d1">
+        <span class="service-num">08 / GOVERNANCE</span>
+        <h3>Guardrails, Ethics &amp; Governance</h3>
+        <p>Define what agents may and may not do — access limits, approval gates, audit logging, bias awareness and responsible AI policy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BROADER SERVICES ============ -->
+<section id="services-broader">
+  <div class="wrap">
+    <div class="eyebrow reveal">Full-Service Capability</div>
+    <h2 class="title reveal d1">Everything else you expect<br><em>from a transformation partner.</em></h2>
+    <p class="lead reveal d2">
+      Agentic systems rarely work in isolation. We also deliver the surrounding layers that make
+      autonomy safe and sustainable — infrastructure, security, data, integration and human
+      capability.
+    </p>
+
+    <div class="service-grid">
+      <div class="service-card reveal">
+        <span class="service-num">01 / INTEGRATION</span>
+        <h3>Agentic AI Integration</h3>
+        <p>Integrate agents and AI services into existing platforms, internal tools and third-party systems without disrupting daily operations.</p>
+      </div>
+
+      <div class="service-card reveal d1">
+        <span class="service-num">02 / TRANSFORMATION</span>
+        <h3>Digital Transformation Strategy</h3>
+        <p>Structured roadmap for modernising operations, processes and systems — aligned with business objectives and measurable outcomes.</p>
+      </div>
+
+      <div class="service-card reveal d2">
+        <span class="service-num">03 / INDUSTRY 4.0</span>
+        <h3>Industry 4.0 Readiness</h3>
+        <p>Assess organisational maturity against the fourth industrial revolution — identifying gaps, priorities and investment pathways.</p>
+      </div>
+
+      <div class="service-card reveal d3">
+        <span class="service-num">04 / LLM &amp; TOOLS</span>
+        <h3>LLM &amp; AI Tool Deployment</h3>
+        <p>Selection, installation and configuration of large language models and AI tools, matched to your workflows, constraints and data policy.</p>
+      </div>
+
+      <div class="service-card reveal d4">
+        <span class="service-num">05 / AUTOMATION</span>
+        <h3>Business Process Automation</h3>
+        <p>Automate repetitive and high-volume processes — document handling, reporting, triage, notifications and internal coordination.</p>
+      </div>
+
+      <div class="service-card reveal d5">
+        <span class="service-num">06 / CYBERSECURITY</span>
+        <h3>Cybersecurity &amp; Safe Behaviours</h3>
+        <p>Practical courses and assessments covering safe digital behaviour, threat awareness, social engineering and the vocabulary of security.</p>
+      </div>
+
+      <div class="service-card reveal">
+        <span class="service-num">07 / FORMATION</span>
+        <h3>Employee &amp; Executive Formation</h3>
+        <p>Structured training for staff and leadership — from foundational AI literacy to advanced operational use of new tools and agents.</p>
+      </div>
+
+      <div class="service-card reveal d1">
+        <span class="service-num">08 / SUPPORT</span>
+        <h3>Model Updates &amp; Technical Support</h3>
+        <p>Ongoing maintenance, model updates and technical support as the AI landscape evolves — keeping systems current, secure and effective.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ============ PACKAGES ============ -->
-<section id="packages"><div class="wrap"><div class="eyebrow reveal">Simple Ways to Start</div><h2 class="title reveal d1">Start small. Prove value.<br><em>Scale only when it makes sense.</em></h2><p class="lead reveal d2"><strong>Not sure where to start? Don't buy technology yet.</strong> Begin with a focused audit, identify what is worth changing, then decide whether implementation has a credible business case.</p><div class="pricing-grid">
-<div class="price-card featured reveal"><span class="price-num">PACKAGE 01 · BEST FIRST STEP</span><h3>Business &amp; AI Opportunity Audit</h3><div class="price-amount">$200<small> fixed</small></div><span class="price-minimum">No obligation to continue</span><p class="price-desc">A low-risk way to discover where your business can save time, improve operations or create commercial value before investing in technology.</p><ul class="price-list"><li>Business &amp; workflow review</li><li>Repetitive-process identification</li><li>AI &amp; automation opportunity assessment</li><li>Basic operational/security-risk observations</li><li>3–5 prioritized improvement opportunities</li><li>Practical action plan</li><li>Management debrief</li></ul><div class="fixed-note"><strong>Clear outcome:</strong> understand what is worth changing, what is not, and what should come first.</div><span class="price-start">Fixed investment · <b>$200</b></span><a href="mailto:joe.agentic@gmail.com?subject=Business%20%26%20AI%20Opportunity%20Audit" class="price-cta">Start Your Audit</a></div>
-<div class="price-card reveal d1"><span class="price-num">PACKAGE 02</span><h3>Digital &amp; Automation Implementation</h3><div class="price-amount">$500<small>+ project</small></div><span class="price-minimum">Fixed scope before work begins</span><p class="price-desc">Turn a validated opportunity into a useful business improvement with a clearly scoped implementation.</p><ul class="price-list"><li>Workflow &amp; CRM automation</li><li>Lead and customer follow-up processes</li><li>Guest/customer communication</li><li>AI-assisted business workflows</li><li>Operational reporting</li><li>Digital-tool implementation</li><li>Process redesign</li><li>Staff adoption &amp; training</li><li>Implementation coordination</li></ul><div class="fixed-note"><strong>Projects from $500.</strong> Additional advisory work can be provided at $100/hour when agreed in advance.</div><span class="price-start">Projects from · <b>$500</b></span><a href="mailto:joe.agentic@gmail.com?subject=Digital%20%26%20Automation%20Project" class="price-cta">Discuss a Project</a></div>
-<div class="price-card reveal d2"><span class="price-num">PACKAGE 03</span><h3>Transformation &amp; Implementation Partnership</h3><div class="price-amount">$1,000<small>+ project</small></div><span class="price-minimum">Fixed quotation after scope</span><p class="price-desc">For broader change across multiple workflows, departments or systems, combining business transformation with coordinated technical delivery.</p><ul class="price-list"><li>Business transformation strategy</li><li>AI &amp; automation deployment</li><li>Agentic workflows where appropriate</li><li>System &amp; process integration</li><li>Operational modernization</li><li>Governance &amp; controls</li><li>Employee/management training</li><li>Testing &amp; rollout coordination</li><li>Post-deployment support</li></ul><div class="fixed-note"><strong>Delivery model:</strong> Jonathan leads business analysis, operational design, transformation strategy and project coordination. Specialist technical resources are incorporated where required and agreed in advance.</div><span class="price-start">Projects from · <b>$1,000</b></span><a href="mailto:joe.agentic@gmail.com?subject=Transformation%20%26%20Implementation%20Partnership" class="price-cta">Discuss Transformation</a></div>
-</div></div></section>
-
-<!-- ============ HOW IT WORKS ============ -->
-<section id="process"><div class="wrap"><div class="eyebrow reveal">How It Works</div><h2 class="title reveal d1">Understand. Improve.<br><em>Implement. Measure. Scale.</em></h2><p class="lead reveal d2">A disciplined process keeps the focus on business value and gives you clarity before committing to larger work.</p><div class="how-grid"><div class="how-step reveal"><span class="how-num">01</span><h3>Understand the business</h3><p>We start with objectives, workflows, customers, problems and opportunities — not with a technology pitch.</p></div><div class="how-step reveal d1"><span class="how-num">02</span><h3>Identify what matters</h3><p>We prioritize the few changes most likely to create practical value. Not every problem needs AI.</p></div><div class="how-step reveal d2"><span class="how-num">03</span><h3>Agree scope &amp; price</h3><p>You receive clearly defined deliverables and a fixed project quotation before implementation begins.</p></div><div class="how-step reveal d3"><span class="how-num">04</span><h3>Implement &amp; measure</h3><p>We deliver directly within the agreed scope or coordinate appropriate specialists, then assess the result before deciding whether to scale.</p></div></div><p class="how-tagline reveal d4">Start small. <em>Prove value.</em> Then scale.</p></div></section>
-
-<!-- ============ EXPERIENCE ============ -->
-<section id="experience">
+<section id="packages">
   <div class="wrap">
-    <div class="eyebrow reveal">Professional Background</div>
-    <h2 class="title reveal d1">A foundation built on <em>operational leadership &amp; trust.</em></h2>
+    <div class="eyebrow reveal">Engagement Packages</div>
+    <h2 class="title reveal d1">Three tiers,<br><em>one clear path forward.</em></h2>
+    <p class="lead reveal d2">
+      Each package is available as <strong>theory-only advisory</strong> or as a
+      <strong>complete implementation</strong> including installation, testing, formation
+      and continuous support. All engagements are scoped to the size and complexity of the
+      organisation, and every project is priced transparently before work begins.
+    </p>
 
-    <div class="timeline" id="timeline">
-      <div class="tl-line"><div class="tl-fill" id="tlFill"></div></div>
-
-      <article class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <span class="tl-date">2020 — Present</span>
-          <h3>Independent Consultant</h3>
-          <h4>AI, Digital Transformation &amp; Cybersecurity · Phnom Penh &amp; Remote</h4>
-          <p>Advising businesses of every size on digital transformation, Industry 4.0 readiness, AI and agentic system implementation, digital ethics, and cybersecurity fundamentals. Delivering strategic advisory and hands-on deployment — from diagnostic review through to installation, formation and continuous technical support.</p>
-          <div class="chips">
-            <span class="chip">Digital Transformation</span><span class="chip">AI &amp; Agentic</span>
-            <span class="chip">Cybersecurity</span><span class="chip">Formation</span>
-            <span class="chip">AI Ethics</span>
-          </div>
+    <div class="pricing-grid">
+      <!-- PACKAGE 1 -->
+      <div class="price-card reveal">
+        <span class="price-num">PACKAGE 01</span>
+        <h3>Business &amp; AI Discovery</h3>
+        <div class="price-amount">$50<small>/ hour</small></div>
+        <span class="price-minimum">Minimum 4 hours — $200</span>
+        <p class="price-desc">
+          Find where technology and AI can actually save your business time and money.
+          We review your current operations, identify problems and inefficiencies, and
+          determine where digital tools, automation, cybersecurity or AI could create
+          measurable improvements.
+        </p>
+        <ul class="price-list">
+          <li>Business and workflow review</li>
+          <li>Identification of repetitive or inefficient processes</li>
+          <li>Technology and AI opportunity assessment</li>
+          <li>Agentic opportunity mapping</li>
+          <li>Basic risk and cybersecurity review</li>
+          <li>Prioritized recommendations</li>
+          <li>Practical action plan &amp; management briefing</li>
+        </ul>
+        <div class="fixed-note">
+          <strong>Fixed-price option:</strong> after discovery, any additional project can
+          be quoted at a fixed price using the same $50/hour rate. Example: 20 hours × $50 = <strong>$1,000 fixed</strong>.
         </div>
-      </article>
+        <span class="price-start">Starting investment · <b>$200</b></span>
+        <a href="https://t.me/Agentickh" target="_blank" rel="noopener noreferrer" class="price-cta">Request Package</a>
+      </div>
 
-      <article class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <span class="tl-date">2017 — 2018</span>
-          <h3>Hotel Manager / Operations Manager</h3>
-          <h4>Golden Boat Hotel · Phnom Penh, Cambodia</h4>
-          <p>Managed approximately 20 employees across reception, housekeeping and security. Oversaw staff scheduling, day-to-day operations and service quality, managed budgets and operational requirements, and maintained relationships with international and VIP guests while coordinating security, customer service and facility operations.</p>
-          <div class="chips">
-            <span class="chip">20 Staff</span><span class="chip">Budget Oversight</span>
-            <span class="chip">Service Quality</span><span class="chip">VIP Relations</span>
-          </div>
+      <!-- PACKAGE 2 -->
+      <div class="price-card reveal d1">
+        <span class="price-num">PACKAGE 02</span>
+        <h3>Digital, Security &amp; AI Upgrade</h3>
+        <div class="price-amount">$100<small>/ hour</small></div>
+        <span class="price-minimum">Minimum 5 hours — $500</span>
+        <p class="price-desc">
+          Modernize your technology, improve security and prepare your company for AI.
+          We examine your existing technology and determine what should be improved,
+          replaced, secured, automated or connected.
+        </p>
+        <ul class="price-list">
+          <li>Hardware, software and infrastructure review</li>
+          <li>Cybersecurity assessment</li>
+          <li>Data and access-control review</li>
+          <li>Cloud and digital-tool assessment</li>
+          <li>AI and agentic readiness assessment</li>
+          <li>Workflow automation opportunities</li>
+          <li>Implementation roadmap</li>
+          <li>Cost and priority recommendations</li>
+          <li>Technical configuration where included in scope</li>
+        </ul>
+        <div class="fixed-note">
+          <strong>Fixed-price option:</strong> once the requirements are clear, we agree on
+          the scope before work begins. Example: 30 hours × $100 = <strong>$3,000 fixed</strong>.
         </div>
-      </article>
+        <span class="price-start">Starting investment · <b>$500</b></span>
+        <a href="https://t.me/Agentickh" target="_blank" rel="noopener noreferrer" class="price-cta">Request Package</a>
+      </div>
 
-      <article class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <span class="tl-date">2015 — 2017</span>
-          <h3>Director &amp; General Manager</h3>
-          <h4>Loby Nightclub · Phnom Penh, Cambodia</h4>
-          <p>Managed overall nightclub operations including staff, security, customer relations and administration. Supervised security procedures and crowd-management protocols, led multicultural teams in a high-pressure nightlife environment, and handled incidents, conflict resolution and operational decision-making.</p>
-          <div class="chips">
-            <span class="chip">Crowd Management</span><span class="chip">Multicultural Teams</span>
-            <span class="chip">Conflict Resolution</span><span class="chip">VIP Clients</span>
-          </div>
+      <!-- PACKAGE 3 — FEATURED -->
+      <div class="price-card featured reveal d2">
+        <span class="price-num">PACKAGE 03</span>
+        <h3>Complete Agentic Transformation</h3>
+        <div class="price-amount">$200<small>/ hour</small></div>
+        <span class="price-minimum">Minimum 5 hours — $1,000</span>
+        <p class="price-desc">
+          We don't just recommend the transformation. We build it. Designed for companies
+          that want implementation rather than another consulting report — we design,
+          deploy and integrate agents, AI, automation and cybersecurity directly into
+          business operations.
+        </p>
+        <ul class="price-list">
+          <li>Autonomous agent setup and configuration</li>
+          <li>Custom agents and multi-agent teams</li>
+          <li>Agentic workflow design and orchestration</li>
+          <li>Tool, API and system integration</li>
+          <li>LLM deployment and configuration</li>
+          <li>Business-process automation</li>
+          <li>Infrastructure modernization</li>
+          <li>Cybersecurity hardening</li>
+          <li>Testing, validation and guardrails</li>
+          <li>AI governance and access controls</li>
+          <li>Executive and employee training</li>
+          <li>Documentation, deployment and post-launch support</li>
+        </ul>
+        <div class="fixed-note">
+          <strong>Fixed-price option:</strong> after the initial discovery and scoping phase,
+          we calculate the complete implementation price using the same $200/hour rate.
+          Example: 50 hours × $200 = <strong>$10,000 fixed</strong>. Scope, deliverables,
+          milestones and price are agreed before implementation begins.
         </div>
-      </article>
+        <span class="price-start">Starting investment · <b>$1,000</b></span>
+        <a href="https://t.me/Agentickh" target="_blank" rel="noopener noreferrer" class="price-cta">Request Package</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <article class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <span class="tl-date">2010 — 2013</span>
-          <h3>Head of Security / Close Protection</h3>
-          <h4>Louis Vuitton · Saint-Tropez, France</h4>
-          <p>Protected luxury merchandise and high-value assets in one of Europe's most prestigious destinations. Managed client access, supported VIP customer environments, and conducted loss-prevention and security monitoring in a luxury retail setting. Worldwide close-protection experience in demanding environments.</p>
-          <div class="chips">
-            <span class="chip">Close Protection</span><span class="chip">Loss Prevention</span>
-            <span class="chip">High-Value Assets</span><span class="chip">Luxury Retail</span>
-          </div>
-        </div>
-      </article>
+<!-- ============ CAPABILITIES ============ -->
+<section id="capabilities">
+  <div class="wrap">
+    <div class="eyebrow reveal">Our Skills</div>
+    <h2 class="title reveal d1">Depth across agentic systems,<br><em>security and strategy.</em></h2>
 
-      <article class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <span class="tl-date">2010</span>
-          <h3>Security Agent / Close Protection</h3>
-          <h4>Le Quai · Saint-Tropez, France</h4>
-          <p>Provided security for a high-end nightlife establishment. Managed entrance control, crowd behaviour and conflict prevention, responding to alcohol-related incidents and challenging customer situations.</p>
-          <div class="chips">
-            <span class="chip">Entrance Control</span><span class="chip">Crowd Behaviour</span>
-            <span class="chip">Conflict Prevention</span>
-          </div>
+    <div class="skill-grid">
+      <div class="skill-card reveal">
+        <span class="skill-num">01 / AGENTIC</span>
+        <h3><i></i>Agentic &amp; Autonomous Systems</h3>
+        <div class="skill-tags">
+          <span class="tag">Agent Architecture</span><span class="tag">Multi-Agent Orchestration</span>
+          <span class="tag">Tool Calling</span><span class="tag">Memory &amp; Context</span>
+          <span class="tag">Self-Correction Loops</span><span class="tag">Human-in-the-Loop</span>
+          <span class="tag">Guardrails &amp; Sandboxing</span>
         </div>
-      </article>
+      </div>
 
-      <article class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <span class="tl-date">2010</span>
-          <h3>Security Agent</h3>
-          <h4>Dior · Saint-Tropez, France</h4>
-          <p>Managed store access and customer monitoring. Supported theft prevention and protection of high-value merchandise in a luxury boutique environment.</p>
-          <div class="chips">
-            <span class="chip">Store Access</span><span class="chip">Theft Prevention</span>
-            <span class="chip">Luxury Boutique</span>
-          </div>
+      <div class="skill-card reveal d1">
+        <span class="skill-num">02 / AI &amp; AUTOMATION</span>
+        <h3><i></i>AI, LLM &amp; Automation</h3>
+        <div class="skill-tags">
+          <span class="tag">Prompt Engineering</span><span class="tag">LLM Deployment</span>
+          <span class="tag">RAG &amp; Knowledge Bases</span><span class="tag">Process Automation</span>
+          <span class="tag">API Integration</span><span class="tag">Model Evaluation</span>
         </div>
-      </article>
+      </div>
+
+      <div class="skill-card reveal d2">
+        <span class="skill-num">03 / SECURITY</span>
+        <h3><i></i>Cybersecurity &amp; Digital Risk</h3>
+        <div class="skill-tags">
+          <span class="tag">Infrastructure Security</span><span class="tag">Access Control</span>
+          <span class="tag">Data Protection</span><span class="tag">Threat Awareness</span>
+          <span class="tag">Social Engineering</span><span class="tag">Safe Digital Behaviour</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal d3">
+        <span class="skill-num">04 / STRATEGY</span>
+        <h3><i></i>Strategy, Ethics &amp; Formation</h3>
+        <div class="skill-tags">
+          <span class="tag">Digital Transformation</span><span class="tag">Industry 4.0 Readiness</span>
+          <span class="tag">AI Ethics</span><span class="tag">AI Governance</span>
+          <span class="tag">Executive Formation</span><span class="tag">Change Management</span>
+        </div>
+      </div>
     </div>
 
-    <!-- EARLIER CAREER -->
-    <div class="earlier">
-      <h3>Earlier Career &amp; Education</h3>
-      <div class="mini-grid">
-        <div class="mini reveal">
-          <b>Logistics Assistant</b>
-          <em>Bedel · Paris, France · 2008</em>
-          <p>Supported logistics, transportation and physical organisation of client property.</p>
+    <!-- TECH MARQUEE -->
+    <div class="marquee">
+      <div class="marquee-track" id="marquee">
+        <span>Agentic AI</span><span>◆</span>
+        <span>Autonomous Agents</span><span>◆</span>
+        <span>Multi-Agent Teams</span><span>◆</span>
+        <span>LLM Deployment</span><span>◆</span>
+        <span>Prompt Engineering</span><span>◆</span>
+        <span>AI Ethics</span><span>◆</span>
+        <span>Cybersecurity</span><span>◆</span>
+        <span>Digital Transformation</span><span>◆</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ERA SECTION ============ -->
+<section id="era" class="era">
+  <div class="wrap">
+    <div class="era-grid">
+      <div>
+        <div class="eyebrow reveal">The Bigger Picture</div>
+        <h2 class="title reveal d1">Digital transformation<br><em>in the Agentic AI era.</em></h2>
+        <p class="lead reveal d2">
+          For two decades, digital transformation meant digitising processes — moving paper to
+          screens, systems to the cloud, reports to dashboards. Valuable, but still fundamentally
+          human-coordinated.
+        </p>
+        <p class="lead reveal d2">
+          Agentic AI introduces a third phase. Systems no longer just record and display work —
+          they <strong>perform</strong> it. They hold an objective, decide the path, use the tools
+          and adapt when reality pushes back.
+        </p>
+        <p class="lead reveal d2">
+          That shift changes what a transformation programme must deliver. It is no longer only
+          about software and data. It is about <strong>delegation</strong> — deciding what can be
+          trusted to run autonomously, what must be supervised, and what must stay human.
+        </p>
+
+        <div class="era-cta reveal d3">
+          <p>
+            <strong>The practical question is no longer “should we adopt AI?”</strong>
+            It is: which objectives in your business can be handed to an agent today, with
+            the right guardrails, and what has to be in place before that happens? That is the
+            work we do.
+          </p>
         </div>
-        <div class="mini reveal d1">
-          <b>Sales Representative</b>
-          <em>Exotic Coffee · Beijing, China · 2007</em>
-          <p>Developed new client relationships and promoted premium products to local and international customers in a Mandarin-speaking commercial environment.</p>
+      </div>
+
+      <div class="era-list">
+        <div class="era-item reveal d1">
+          <span>Phase 01</span>
+          <h3>Digitisation</h3>
+          <p>Paper to digital. Records, systems and reporting become electronic. The work is still done by people — just on screens instead of paper.</p>
         </div>
-        <div class="mini reveal d2">
-          <b>French Teacher</b>
-          <em>Beijing University · China · 2006</em>
-          <p>Taught French language and culture to Chinese students.</p>
+        <div class="era-item reveal d2">
+          <span>Phase 02</span>
+          <h3>Digital Transformation</h3>
+          <p>Processes are automated step by step. Systems integrate. Humans still coordinate the sequence, handle exceptions and move information between tools.</p>
         </div>
-        <div class="mini reveal d3">
-          <b>English Teacher</b>
-          <em>Xinbao Kindergarten · Beijing, China · 2006</em>
-          <p>Introduced young students to spoken English.</p>
-        </div>
-        <div class="mini reveal d4">
-          <b>Beijing Sport University</b>
-          <em>2004 — 2006 · Beijing, China</em>
-          <p>Studies in Kung Fu / Wushu, Mandarin Chinese language and Chinese culture.</p>
-        </div>
-        <div class="mini reveal d5">
-          <b>Lycée Bergson — Baccalauréat</b>
-          <em>2002 · Paris, France</em>
-          <p>French secondary education diploma.</p>
+        <div class="era-item reveal d3">
+          <span>Phase 03</span>
+          <h3>Agentic Transformation</h3>
+          <p>Objectives are delegated. Agents plan, act, call tools and self-correct. Humans set direction, approve boundaries and review outcomes at a higher level.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ SKILLS ============ -->
-<section id="skills"><div class="wrap"><div class="eyebrow reveal">Capabilities</div><h2 class="title reveal d1">Technology informed.<br><em>Business focused.</em></h2><div class="skill-grid">
-<div class="skill-card reveal"><span class="skill-num">01 / APPLIED AI</span><h3><i></i>AI &amp; Automation</h3><div class="skill-tags"><span class="tag">Prompt Engineering</span><span class="tag">AI-Assisted Workflows</span><span class="tag">Agentic Systems</span><span class="tag">LLM Applications</span><span class="tag">AI Opportunity Assessment</span></div></div>
-<div class="skill-card reveal d1"><span class="skill-num">02 / TRANSFORMATION</span><h3><i></i>Digital &amp; Operational Improvement</h3><div class="skill-tags"><span class="tag">Workflow Modernization</span><span class="tag">Process Improvement</span><span class="tag">Digital Tool Selection</span><span class="tag">Implementation Coordination</span><span class="tag">Change Management</span></div></div>
-<div class="skill-card reveal d2"><span class="skill-num">03 / GOVERNANCE</span><h3><i></i>AI Governance &amp; Human Factors</h3><div class="skill-tags"><span class="tag">AI Ethics</span><span class="tag">Responsible Adoption</span><span class="tag">Human Impact</span><span class="tag">Social Engineering Awareness</span><span class="tag">Management Education</span></div></div>
-<div class="skill-card reveal d3"><span class="skill-num">04 / OPERATIONS</span><h3><i></i>Security &amp; Operational Risk</h3><div class="skill-tags"><span class="tag">Security Awareness</span><span class="tag">Human Risk</span><span class="tag">Operational Security</span><span class="tag">Crisis Awareness</span><span class="tag">VIP / Security Operations</span><span class="tag">International Clientele</span></div></div></div>
-<p class="lead reveal d4" style="margin-top:34px">My role is to connect technology to practical business requirements. Where a project requires specialist software engineering, penetration testing, infrastructure engineering or other specialist technical work, appropriate professionals are incorporated into delivery.</p>
-</div></section>
-
 <!-- ============ CONTACT ============ -->
-<section id="contact" class="contact"><div class="wrap"><div class="eyebrow reveal">Contact</div><h2 class="reveal d1">What could your business<br><em>do better?</em></h2><p class="lead reveal d2" style="text-align:center;margin-left:auto;margin-right:auto">You don't need to know which technology you need. Tell me what isn't working, what takes too much time, or what you want the business to achieve. We'll determine whether AI, automation, digital transformation, operational improvement — or simply a better process — can help.</p><p class="lead reveal d2" style="text-align:center;margin:18px auto 34px"><strong>Start with a 15–20 minute conversation, or begin with the $200 Business &amp; AI Opportunity Audit.</strong></p><div class="cta-row reveal d3" style="justify-content:center"><a href="mailto:joe.agentic@gmail.com?subject=Consulting%20Enquiry" class="btn solid"><span>Request a Consultation</span><span class="arrow">→</span></a><a href="https://t.me/Agentickh" target="_blank" rel="noopener noreferrer" class="btn"><span>Message on Telegram</span><span class="arrow">→</span></a></div><div class="contact-meta reveal d4"><a class="meta-chip" href="mailto:joe.agentic@gmail.com">Email <b>joe.agentic@gmail.com</b></a><a class="meta-chip" href="https://t.me/Agentickh" target="_blank" rel="noopener noreferrer">Telegram <b>@Agentickh</b></a><span class="meta-chip">Based in <b>Phnom Penh, Cambodia</b></span></div></div></section>
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="eyebrow reveal">Contact</div>
+    <h2 class="reveal d1">Your transformation<br><em>starts here.</em></h2>
+    <p class="lead reveal d2" style="text-align:center;margin-left:auto;margin-right:auto">
+      Available for engagements across Cambodia, Southeast Asia and internationally.
+      Small, medium and large organisations welcome. Let's discuss how your business can
+      move confidently from digital to agentic.
+    </p>
+
+    <div class="cta-row reveal d3" style="justify-content:center">
+      <a href="https://t.me/Agentickh" target="_blank" rel="noopener noreferrer" class="btn solid"><span>Request a Consultation</span><span class="arrow">→</span></a>
+      <a href="https://t.me/Agentickh" target="_blank" rel="noopener noreferrer" class="btn"><span>Message on Telegram</span><span class="arrow">→</span></a>
+    </div>
+
+    <div class="contact-meta reveal d4">
+      <a class="meta-chip" href="https://t.me/Agentickh" target="_blank" rel="noopener noreferrer">
+        Telegram <b>@Agentickh</b>
+      </a>
+      <a class="meta-chip" href="https://t.me/Agentickh" target="_blank" rel="noopener noreferrer">
+        t.me <b>Agentickh</b>
+      </a>
+      <a class="meta-chip" href="https://t.me/Agentickh" target="_blank" rel="noopener noreferrer">
+        Chat <b>Direct</b>
+      </a>
+    </div>
+  </div>
+</section>
 
 </main>
 
-<footer><span>© <span id="year"></span> Jonathan Victor Alexandre Roche</span><span>Practical AI · Automation · Business Transformation · Cambodia</span><div class="footer-links"><a href="mailto:joe.agentic@gmail.com">joe.agentic@gmail.com</a><span>·</span><a href="https://t.me/Agentickh" target="_blank" rel="noopener noreferrer">@Agentickh</a></div></footer>
+<footer>
+  <span>© <span id="year"></span> Agentico — Agentic Transformation Consulting</span>
+  <span>Autonomous Agents · Enterprise AI · The Next Phase of Transformation</span>
+  <div class="footer-links">
+    <a href="https://t.me/Agentickh" target="_blank" rel="noopener noreferrer">@Agentickh</a>
+  </div>
+</footer>
 
 <script>
 /* =========================================================
@@ -1711,7 +1885,7 @@ footer a:hover{color:var(--magenta)}
     requestAnimationFrame(loop);
   })();
 
-  const hot = document.querySelectorAll('a, button, .tl-card, .skill-card, .mini, .lang, .pillar, .tag, .chip, .gallery-item, .service-card, .price-card, .how-step');
+  const hot = document.querySelectorAll('a, button, .skill-card, .tag, .service-card, .price-card, .era-item, .compare-col, .intro-badge');
   hot.forEach(el=>{
     el.addEventListener('mouseenter', ()=>ring.classList.add('hot'));
     el.addEventListener('mouseleave', ()=>ring.classList.remove('hot'));
@@ -1725,11 +1899,11 @@ footer a:hover{color:var(--magenta)}
   const el = document.getElementById('typed');
   if(!el) return;
   const roles = [
-    'Business & AI Opportunity Audits',
-    'Operational Transformation',
-    'Cambodia & ASEAN Advisory',
-    'Cybersecurity & Digital Ethics',
-    'Formation & Continuous Support'
+    'Embracing the Future of AI',
+    'From Tasks to Outcomes',
+    'Agentic AI for Enterprise Growth',
+    'Autonomous Agents at Scale',
+    'Unlocking the Next Phase'
   ];
   let ri = 0, ci = 0, deleting = false;
 
@@ -1756,7 +1930,7 @@ footer a:hover{color:var(--magenta)}
     entries.forEach(entry=>{
       if(entry.isIntersecting){
         entry.target.classList.add('in');
-        entry.target.querySelectorAll('.chip, .tag').forEach((c,i)=>{
+        entry.target.querySelectorAll('.tag').forEach((c,i)=>{
           c.style.setProperty('--i', i);
         });
         io.unobserve(entry.target);
@@ -1765,7 +1939,6 @@ footer a:hover{color:var(--magenta)}
   }, {threshold: 0.14, rootMargin: '0px 0px -60px 0px'});
 
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-  document.querySelectorAll('.tl-item').forEach(el=>io.observe(el));
 })();
 
 /* =========================================================
@@ -1795,38 +1968,7 @@ footer a:hover{color:var(--magenta)}
 })();
 
 /* =========================================================
-   6. LANGUAGE RINGS
-   ========================================================= */
-(function(){
-  const langs = document.querySelectorAll('.lang');
-  const C = 2 * Math.PI * 52;
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      if(!entry.isIntersecting) return;
-      const el = entry.target;
-      const pct = parseFloat(el.dataset.pct);
-      const ring = el.querySelector('.ring-fg');
-      const label = el.querySelector('.lang-pct');
-      ring.style.strokeDasharray = C;
-      ring.style.strokeDashoffset = C;
-      requestAnimationFrame(()=>{
-        ring.style.strokeDashoffset = C * (1 - pct/100);
-      });
-      const start = performance.now();
-      (function step(now){
-        const p = Math.min((now-start)/1600, 1);
-        const eased = 1 - Math.pow(1-p, 3);
-        label.textContent = Math.round(pct * eased) + '%';
-        if(p < 1) requestAnimationFrame(step);
-      })(start);
-      io.unobserve(el);
-    });
-  }, {threshold:.4});
-  langs.forEach(l=>io.observe(l));
-})();
-
-/* =========================================================
-   7. NAV
+   6. NAV
    ========================================================= */
 (function(){
   const nav = document.getElementById('nav');
@@ -1867,34 +2009,7 @@ footer a:hover{color:var(--magenta)}
 })();
 
 /* =========================================================
-   8. TIMELINE FILL + GLOW TRACKING
-   ========================================================= */
-(function(){
-  const timeline = document.getElementById('timeline');
-  const fill = document.getElementById('tlFill');
-  if(!timeline) return;
-
-  function update(){
-    const rect = timeline.getBoundingClientRect();
-    const anchor = innerHeight * 0.55;
-    const scrolled = Math.max(0, Math.min(anchor - rect.top, rect.height));
-    fill.style.height = scrolled + 'px';
-  }
-  window.addEventListener('scroll', update, {passive:true});
-  window.addEventListener('resize', update);
-  update();
-
-  document.querySelectorAll('.tl-card').forEach(card=>{
-    card.addEventListener('mousemove', e=>{
-      const r = card.getBoundingClientRect();
-      card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
-      card.style.setProperty('--my', (e.clientY - r.top) + 'px');
-    });
-  });
-})();
-
-/* =========================================================
-   9. TAG STAGGER
+   7. TAG STAGGER
    ========================================================= */
 (function(){
   document.querySelectorAll('.skill-tags').forEach(group=>{
@@ -1903,7 +2018,7 @@ footer a:hover{color:var(--magenta)}
 })();
 
 /* =========================================================
-   10. MARQUEE DUPLICATION
+   8. MARQUEE DUPLICATION
    ========================================================= */
 (function(){
   const track = document.getElementById('marquee');
@@ -1912,7 +2027,7 @@ footer a:hover{color:var(--magenta)}
 })();
 
 /* =========================================================
-   11. YEAR
+   9. YEAR
    ========================================================= */
 document.getElementById('year').textContent = new Date().getFullYear();
 </script>
